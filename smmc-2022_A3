@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the functions f(x) and g(x)
+def f(x):
+    return np.sin((np.pi * np.sin((np.pi * x) / 2)) / 2)
+
+def g(x):
+    return (2 / np.pi) * np.arcsin((2 / np.pi) * np.arcsin(x))
+
+# Define the interval and compute the values
+x_vals = np.linspace(0, 1, 400)
+
+# Plot the functions
+plt.figure(figsize=(10, 6))
+plt.plot(x_vals, [f(x) for x in x_vals], label='$f(x)$')
+plt.plot(x_vals, [g(x) for x in x_vals], label='$g(x)$')
+plt.plot([0, 1], [0, 1], linestyle=':', color='gray', label='$y=x$')
+
+plt.title('Graphs of $f(x)$ and $g(x)$')
+plt.xlabel('$x$')
+plt.ylabel('Function values')
+plt.legend()
+plt.grid(True)
+plt.show()
